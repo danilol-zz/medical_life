@@ -1,0 +1,41 @@
+<h1>Consultas Médicas</h1>
+
+<div class="modulo">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Médico</th>
+        <th>Data</th>
+        <th>Sintomas</th>
+        <th>Especialização</th>
+        <th>Reason</th>
+        <th>Medical opinion</th>
+        <th>Prescription</th>
+        <th>Ordered tests</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @medical_consultations.each do |medical_consultation| %>
+        <tr>
+          <td><%= medical_consultation.doctor.name %></td>
+          <td><%= medical_consultation.date %></td>
+          <td><%= medical_consultation.syntoms %></td>
+          <td><%= medical_consultation.doctor.specializations.collect(&:description).join(",") %></td>
+          <td><%= medical_consultation.reason %></td>
+          <td><%= medical_consultation.medical_opinion %></td>
+          <td><%= medical_consultation.prescription %></td>
+          <td><%= medical_consultation.ordered_tests %></td>
+          <td><%= link_to t('show'), medical_consultation %></td>
+          <td><%= link_to t('edit'), edit_medical_consultation_path(medical_consultation) %></td>
+          <td><%= link_to t('destroy'), medical_consultation, method: :delete, data: { confirm: t('are_you_sure') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'Nova consulta', new_medical_consultation_path %>

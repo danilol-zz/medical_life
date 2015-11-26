@@ -1,0 +1,53 @@
+<%= form_for(@doctor) do |f| %>
+  <% if @doctor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doctor.errors.count, "error") %> prohibited this doctor from being saved:</h2>
+
+      <ul>
+      <% @doctor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :specialization %><br>
+    <%= f.select :specialization_ids, Specialization.all.collect {|x| [x.description, x.id]}, {}, { multiple: true} %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :crm_number %><br>
+    <%= f.number_field :crm_number %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :phone1 %><br>
+    <%= f.text_field :phone1 %>
+  </div>
+  <div class="field">
+    <%= f.label :phone2 %><br>
+    <%= f.text_field :phone2 %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

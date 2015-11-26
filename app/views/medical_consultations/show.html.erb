@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @medical_consultation.doctor_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @medical_consultation.date %>
+</p>
+
+<p>
+  <strong>Syntoms:</strong>
+  <%= @medical_consultation.syntoms %>
+</p>
+
+<p>
+  <strong>Specialization:</strong>
+  <%= @medical_consultation.specialization_id %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @medical_consultation.reason %>
+</p>
+
+<p>
+  <strong>Medical opinion:</strong>
+  <%= @medical_consultation.medical_opinion %>
+</p>
+
+<p>
+  <strong>Prescription:</strong>
+  <%= @medical_consultation.prescription %>
+</p>
+
+<p>
+  <strong>Ordered tests:</strong>
+  <%= @medical_consultation.ordered_tests %>
+</p>
+
+<%= link_to 'Edit', edit_medical_consultation_path(@medical_consultation) %> |
+<%= link_to 'Back', medical_consultations_path %>

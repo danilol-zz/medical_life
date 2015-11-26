@@ -1,0 +1,46 @@
+<%= form_for(@medical_consultation) do |f| %>
+  <% if @medical_consultation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@medical_consultation.errors.count, "error") %> prohibited this medical_consultation from being saved:</h2>
+
+      <ul>
+      <% @medical_consultation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="left t8">
+    <%= f.label :doctor_id %>
+    <%= f.select :doctor_id, @doctors.collect { |d| [d.name, d.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date, class: "input-medium date", readonly: true %>
+    <button class="btn_start_at btn" type="button"><span class="icon-calendar"></span></button>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_area :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :syntoms %><br>
+    <%= f.text_area :syntoms %>
+  </div>
+  <div class="field">
+    <%= f.label :medical_opinion %><br>
+    <%= f.text_area :medical_opinion %>
+  </div>
+  <div class="field">
+    <%= f.label :prescription %><br>
+    <%= f.text_area :prescription %>
+  </div>
+  <div class="field">
+    <%= f.label :ordered_tests %><br>
+    <%= f.text_area :ordered_tests %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
