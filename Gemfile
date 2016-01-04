@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.7'
 gem 'mysql2', '~> 0.3.15'
 gem 'jquery-rails'
-gem 'bootstrap-datepicker-rails'
 
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
