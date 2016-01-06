@@ -10,14 +10,13 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.text_field :date, id: "datepicker" %>
+  </div>
   <div class="left t8">
     <%= f.label :doctor_id %>
     <%= f.select :doctor_id, @doctors.collect { |d| [d.name, d.id] } %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date, id: "datepicker" %>
   </div>
   <div class="field">
     <%= f.label :reason %><br>
