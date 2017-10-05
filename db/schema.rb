@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126202119) do
+ActiveRecord::Schema.define(version: 20160121220629) do
 
   create_table "doctors", force: true do |t|
     t.string   "name"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 20151126202119) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "notepads", force: true do |t|
+    t.string   "name"
+    t.text     "content_data"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notepads", ["user_id"], name: "index_notepads_on_user_id", using: :btree
 
   create_table "specializations", force: true do |t|
     t.string   "description"

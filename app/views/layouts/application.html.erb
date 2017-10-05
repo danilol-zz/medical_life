@@ -34,6 +34,8 @@
                 <li class="divider"></li>
                 <li><%= link_to "Consultas", medical_consultations_path %></li>
                 <li><%= link_to "Nova Consulta", new_medical_consultation_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Anotacoes", new_notepad_path %></li>
               </ul>
             </li>
             <% if @current_user and @current_user.admin? %>

@@ -1173,3 +1173,9 @@ body .ui-tooltip {
 	filter: Alpha(Opacity=30);
 	border-radius: 8px;
 }
+
+#notepad_content_data.style {
+  height: 100%;
+  width: 100%;
+}
+

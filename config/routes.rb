@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :notepads
+
   resources :specializations
 
   resources :medical_consultations
